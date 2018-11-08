@@ -1,2 +1,2 @@
-# hello-world
-My first repository on GitHub
+# CIT 144 Final Project
+Final Project
