@@ -1,0 +1,119 @@
+#import tkinter#
+from tkinter import *
+
+#define constants used for fonts#
+HEADER_FONT = "Arial", 12
+BUTTON_FONT = "Arial", 8, "bold"
+NORMAL_FONT = "Arial", 10
+PROMPT_FONT = "Arial", 10, "italic"
+
+#define main class#
+class BankManager:
+    def __init__(self):
+        window = Tk()
+        window.title("Friendly Bank")
+        window.geometry("800x400")
+
+        welcome = Label(window, text = "Welcome to the Friendly Bank account manager app!", font = HEADER_FONT)
+        welcome.pack()
+
+        balance = Button(window, text = "Check account balance", font = BUTTON_FONT, command = BalancePage)
+        balance.pack()
+
+        deposit = Button(window, text = "Make a deposit", font = BUTTON_FONT, command = DepositPage)
+        deposit.pack()
+
+        withdrawl = Button(window, text = "Make a withdrawl", font = BUTTON_FONT, command = WithdrawlPage)
+        withdrawl.pack()
+
+        transfer = Button(window, text = "Make a transfer", font = BUTTON_FONT, command = TransferPage)
+        transfer.pack()
+
+#create window for transfer#
+class TransferPage:
+    def __init__ (self):
+        window = Tk()
+        window.title("Transfer")
+        
+        label = Label (window, text = "What account would you like to make a transfer from?", font = HEADER_FONT)
+        transBalance.pack()
+
+        checkingBtn = Button(window, text = "Checking Account", font = BUTTON_FONT, command = CheckingPage)
+        checkingBtn.pack()
+        
+        savingsBtn = Button (window, text = "Savings Account", font = BUTTON_FONT, command = SavingsPage)
+        savingsBtn.pack()
+
+
+#create window to withdrawl#
+class WithdrawlPage:
+    def __init__ (self):
+        window = Tk()
+        window.title("Withdrawl")
+        
+        label = Label (window, text = "What account would you like to make a withdrawl from?", font = HEADER_FONT)
+        label.pack()
+
+        checkingBtn = Button(window, text = "Checking Account", font = BUTTON_FONT, command = CheckingPage)
+        checkingBtn.pack()
+        
+        savingsBtn = Button (window, text = "Savings Account", font = BUTTON_FONT, command = SavingsPage)
+        savingsBtn.pack()        
+
+#create window to see balance of accounts#
+class BalancePage:
+    def __init__ (self):
+        window = Tk()
+        window.title("Balance")
+        
+        checkBalance = Label(window, text = "What account would you like to view?", font = HEADER_FONT)
+        checkBalance.pack()
+
+        checkingBtn = Button(window, text = "Checking Account", font = BUTTON_FONT, command = CheckingPage)
+        checkingBtn.pack()
+        
+        savingsBtn = Button (window, text = "Savings Account", font = BUTTON_FONT, command = SavingsPage)
+        savingsBtn.pack()
+
+#create window to make deposits#
+class DepositPage:
+    def __init__(self):
+        window = Tk()
+        window.title("Deposits")
+
+        makeDeposit = Label(window, text = "Where would you like to make the deposit?", font = HEADER_FONT)
+        makeDeposit.pack()
+
+        savingsBtn = Button(window, text = "Savings Account", font = BUTTON_FONT, command = SavingsPage)
+        savingsBtn.pack()
+
+        checkingBtn  = Button(window, text = "Checking Account", font = BUTTON_FONT, command = CheckingPage)
+        checkingBtn.pack()
+
+
+#create window to deposit into savings account#
+class SavingsPage:
+    def __init__(self):
+        window = Tk()
+        window.title("Savings Account")
+
+        label = Label(window, text = "How much would you like to deposit?", font = PROMPT_FONT)
+        label.pack()
+
+        entrySavings = Entry(window)
+        entrySavings.pack()
+
+#create window to deposit into checking account#
+class CheckingPage:
+    def __init__(self):
+        window = Tk()
+        window.title("Checking Account")
+
+        label = Label(window, text = "How much would you like to deposit?", font = PROMPT_FONT)
+        label.pack()
+
+        entryChecking = Entry(window)
+        entryChecking.pack()
+        
+        window.mainloop()
+BankManager()
